@@ -30,6 +30,7 @@ Segment a corporate LAN into Sales (VLAN 10) and IT (VLAN 20), enable inter-VLAN
 **Inter-VLAN routing:** Sales-PC to IT-PC-2 (192.168.20.3) ping succeeds (3 of 4 replies).
 
 **ACL test:** Sales-PC to IT-PC-1 (192.168.20.2) ping is blocked. Reply is `Destination host unreachable` from 192.168.10.1, which confirms the ACL drop.
+**Trunk (Access-Switch):** `show interfaces trunk` shows Gig0/1 in `802.1q trunking` mode, allowed and active VLANs 1, 10, 20, which confirms the Router-on-a-Stick uplink.
 
 ## File
 
