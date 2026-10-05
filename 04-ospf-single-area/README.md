@@ -21,9 +21,16 @@ Configure OSPFv2 (Process 1, Area 0) across three routers so that all LAN subnet
 
 ## Verification
 
-- `show ip ospf neighbor` (neighbors should show FULL)
-- `show ip route ospf` (OSPF routes present)
-- Ping from Branch-B-PC (192.168.30.x) to HQ-PC (192.168.10.x)
+**OSPF neighbors (R1-HQ):**
+Both neighbors (192.168.20.1 and 192.168.30.1) reach the `FULL/DR` state on Gi0/0 and Gi0/1.
+
+**OSPF routes learned (R1-HQ):**
+- 192.168.20.0/24 via 10.1.12.2 (Gi0/0)
+- 192.168.30.0/24 via 10.1.20.1 (Gi0/1)
+- 10.1.13.0/24 via two equal-cost paths
+
+**End-to-end ping (Branch-B-PC to HQ-PC, 192.168.10.2):**
+3 of 4 packets received (first packet timed out while ARP resolved; remaining replies TTL=126, <1ms).
 
 ## File
 
